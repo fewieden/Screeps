@@ -1,0 +1,23 @@
+{
+  "name": "screeps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fewieden/Screeps.git"
+  },
+  "author": "fewieden",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fewieden/Screeps/issues"
+  },
+  "homepage": "https://github.com/fewieden/Screeps#readme",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-screeps": "^1.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.1.1"
+  }
+}

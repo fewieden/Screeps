@@ -1,0 +1,31 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-console": 0
+  },
+  "globals": {
+    "Game": true,
+    "Memory": true,
+    "Creep": true,
+    "StructureTower": true,
+    "FIND_HOSTILE_CREEPS": true,
+    "FIND_MY_STRUCTURES": true,
+    "FIND_MY_CREEPS": true,
+    "STRUCTURE_TOWER": true,
+    "FIND_SOURCES": true,
+    "FIND_STRUCTURES": true,
+    "STRUCTURE_CONTAINER": true,
+    "FIND_SOURCES_ACTIVE": true,
+    "FIND_CONSTRUCTION_SITES": true,
+    "RESOURCE_ENERGY": true,
+    "ERR_NOT_IN_RANGE": true,
+    "STRUCTURE_WALL": true,
+    "WORK": true,
+    "CARRY": true,
+    "MOVE": true
+  }
+}
