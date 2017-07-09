@@ -16,8 +16,14 @@ const roles = {
     macgyver: require('role.macgyver'),
     trump: require('role.trump'),
     mechanic: require('role.mechanic'),
-    containerMiner: require('role.containerMiner')
+    containerMiner: require('role.containerMiner'),
+    trucker: require('role.trucker')
 };
+
+const requireNoDefaultEnergy = [
+    'containerMiner',
+    'trucker'
+];
 
 /**
  * Looks for an executable fallback task of the creeps role
@@ -44,7 +50,7 @@ module.exports = {
             const creep = Game.creeps[name];
             const role = creep.memory.role;
 
-            if (creep.memory.isBusy && creep.carry.energy === 0 && creep.memory.role !== 'containerMiner'){
+            if (creep.memory.isBusy && creep.carry.energy === 0 && !requireNoDefaultEnergy.includes(creep.memory.role)){
                 creep.memory.isBusy = false;
             } else if (!creep.memory.isBusy && creep.carry.energy === creep.carryCapacity) {
                 creep.memory.isBusy = true;
