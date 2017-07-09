@@ -26,6 +26,13 @@ Creep.prototype.getEnergy = function() {
         return;
     }
 
+    if (this.room.storage !== undefined && this.room.storage.store[RESOURCE_ENERGY] > 0) {
+        if (this.withdraw(this.room.storage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+            this.moveTo(this.room.storage);
+        }
+        return;
+    }
+
     const source = this.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
     if(this.harvest(source) === ERR_NOT_IN_RANGE) {
         this.moveTo(source);
