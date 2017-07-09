@@ -12,8 +12,8 @@ module.exports = {
     spawnTicks: 5,
     roles: {
         harvester: {
-            body: [WORK, WORK, CARRY, MOVE, MOVE],
-            max: 2,
+            body: [WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE],
+            max: 1,
             priority: 3,
             fallback: ['upgrader']
         },
@@ -47,7 +47,7 @@ module.exports = {
         },
 
         macgyver: {
-            body: [WORK, WORK, CARRY, MOVE, MOVE],
+            body: [WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE],
             max: 1,
             priority: 2,
             fallback: ['harvester', 'upgrader'],
@@ -64,15 +64,31 @@ module.exports = {
             }
         },
 
+        trucker: {
+            body: [CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
+            max: 2,
+            priority: 2,
+            fallback: [],
+            /**
+             * Only spawn a trucker, if there is a room storage.
+             *
+             * @param {StructureSpawn} spawn
+             * @returns {boolean}
+             */
+            spawnRule: (spawn) => {
+                return spawn.room.storage !== undefined;
+            }
+        },
+
         upgrader: {
-            body: [WORK, WORK, WORK, CARRY, CARRY, CARRY, MOVE],
-            max: 3,
+            body: [WORK, WORK, WORK, CARRY, CARRY, CARRY, MOVE, MOVE],
+            max: 1,
             priority: 1,
             fallback: []
         },
 
         trump: {
-            body: [WORK, WORK, CARRY, MOVE, MOVE],
+            body: [WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE],
             max: 1,
             priority: 0,
             fallback: ['harvester'],
