@@ -42,6 +42,8 @@ on par with you.
     - His duty is to build up a wall, to keep invaders out of the room.
 1. Upgrader
     - Upgrades the room controller, to level up the RCL (Room Control Level) and unlock new buildings.
+1. Trucker
+    - Prevents container overfilling, by transporting energy from containers to room storage.
 
 ## Deployment
 
